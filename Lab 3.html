@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">class </span><span class="s1">Student </span><span class="s2">{</span>
+    <span class="s1">String nume</span><span class="s2">;</span>
+
+    <span class="s1">Student</span><span class="s2">(</span><span class="s1">String nume</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nume </span><span class="s2">= </span><span class="s1">nume</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+<span class="s0">public class </span><span class="s1">Main </span><span class="s2">{</span>
+
+    <span class="s3">// Metodă care încearcă să modifice o valoare primitivă</span>
+    <span class="s0">static void </span><span class="s1">modificaPrimitiv</span><span class="s2">(</span><span class="s0">int </span><span class="s1">x</span><span class="s2">) {</span>
+        <span class="s1">x </span><span class="s2">= </span><span class="s4">10</span><span class="s2">; </span><span class="s3">// Modifică doar copia locală a lui x</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Metodă care modifică un obiect prin referință</span>
+    <span class="s0">static void </span><span class="s1">modificaObiect</span><span class="s2">(</span><span class="s1">Student s</span><span class="s2">) {</span>
+        <span class="s1">s</span><span class="s2">.</span><span class="s1">nume </span><span class="s2">= </span><span class="s5">&quot;Alex&quot;</span><span class="s2">; </span><span class="s3">// Modifică conținutul obiectului original</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Metodă care schimbă referința unui obiect</span>
+    <span class="s0">static void </span><span class="s1">schimbaReferinta</span><span class="s2">(</span><span class="s1">Student s</span><span class="s2">) {</span>
+        <span class="s1">s </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Student</span><span class="s2">(</span><span class="s5">&quot;Maria&quot;</span><span class="s2">); </span><span class="s3">// Crează un nou obiect și schimbă referința locală</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s0">int </span><span class="s1">a </span><span class="s2">= </span><span class="s4">5</span><span class="s2">;</span>
+        <span class="s1">modificaPrimitiv</span><span class="s2">(</span><span class="s1">a</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Valoarea lui a după apel: &quot; </span><span class="s2">+ </span><span class="s1">a</span><span class="s2">); </span><span class="s3">// 5 (nemodificat)</span>
+
+        <span class="s1">Student stud </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Student</span><span class="s2">(</span><span class="s5">&quot;Ion&quot;</span><span class="s2">);</span>
+        <span class="s1">modificaObiect</span><span class="s2">(</span><span class="s1">stud</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Numele studentului după modificare: &quot; </span><span class="s2">+ </span><span class="s1">stud</span><span class="s2">.</span><span class="s1">nume</span><span class="s2">); </span><span class="s3">// &quot;Alex&quot; (modificat)</span>
+
+        <span class="s1">schimbaReferinta</span><span class="s2">(</span><span class="s1">stud</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Numele studentului după schimbare referință: &quot; </span><span class="s2">+ </span><span class="s1">stud</span><span class="s2">.</span><span class="s1">nume</span><span class="s2">); </span><span class="s3">// &quot;Alex&quot; (nemodificat)</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
